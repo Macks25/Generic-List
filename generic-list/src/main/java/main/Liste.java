@@ -8,6 +8,7 @@ package main;
 /**
  *
  * @author zelle
+ * @param <T>
  */
 public class Liste<T> {
 
@@ -16,7 +17,7 @@ public class Liste<T> {
     
     public void add(T elem){
         if(head == null){
-            head= new Knote<T>();
+            head= new Knote<>();
             head.set(elem);
             
         }else{
@@ -29,6 +30,15 @@ public class Liste<T> {
             
             temp.setNext(elem);
             
+        }
+    }
+    
+    public void concat(Liste<T> pliste){
+        pliste.ToFirst();
+        
+        while(pliste.hasAccess()){
+            this.add(pliste.getContent());
+            pliste.next();
         }
     }
     

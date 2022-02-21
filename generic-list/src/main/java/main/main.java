@@ -14,13 +14,17 @@ public class main {
         
         
         Liste<String> list = new Liste<String>();
+        Liste<String> temp = new Liste<String>();
         
         
         list.add("Hallo");
         list.add("Wie Gehts so?");
         list.add("sehr gut");
         
+        temp.add("KAK");
+        temp.add("LULU");
         
+        list.concat(temp);
         list.ToFirst();
         
         while(list.hasAccess()){
