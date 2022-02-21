@@ -34,6 +34,13 @@ public class Knote<T> {
         next.set(elem);
     }
     
+    public void setNext(Knote<T> elem){
+
+        
+       
+        next = elem;
+    }
+    
     public Knote<T> getnext(){
         return next;
     }

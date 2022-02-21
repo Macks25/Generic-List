@@ -27,10 +27,14 @@ public class main {
         list.concat(temp);
         list.ToFirst();
         
-        while(list.hasAccess()){
-            System.out.println(list.getContent());
-            list.next();
-        }
+       //list.next();
+       //list.next();
+       list.insert("moinsen");
         
+        list.ToFirst();
+       while(list.hasAccess()){
+           System.out.println(list.getContent());
+           list.next();
+       }
     }
 }

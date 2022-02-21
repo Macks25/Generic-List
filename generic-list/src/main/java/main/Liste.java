@@ -14,6 +14,7 @@ public class Liste<T> {
 
     private Knote<T> head;
     private Knote<T> counter;
+    private Knote<T> beforec;
     
     public void add(T elem){
         if(head == null){
@@ -42,11 +43,40 @@ public class Liste<T> {
         }
     }
     
+    public void insert(T pT){
+        
+        Knote<T> temp = new Knote<>();
+            temp.set(pT);
+        if(beforec == null){
+            //Anfang der Liste
+            
+            temp.setNext(head);
+            head = temp;
+            
+            beforec = head;
+            counter = head.getnext();
+        }else{
+            
+            
+            
+            beforec.setNext(temp);
+            temp.setNext(counter);
+            
+            beforec = temp;
+            
+            
+            
+            //Nicht erstes Element
+        }
+    }
+    
     public void ToFirst(){
+        beforec = null;
         counter = head;
     }
     
     public void next(){
+        beforec = counter;
         counter = counter.getnext();
     }
     
